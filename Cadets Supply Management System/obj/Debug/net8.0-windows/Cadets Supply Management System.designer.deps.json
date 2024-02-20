@@ -6,6 +6,12 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
+      "Microsoft.Data.Sqlite/8.0.2": {
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "8.0.2",
+          "SQLitePCLRaw.bundle_e_sqlite3": "2.1.6"
+        }
+      },
       "Microsoft.Data.Sqlite.Core/8.0.2": {
         "dependencies": {
           "SQLitePCLRaw.core": "2.1.6"
@@ -376,6 +382,13 @@
     }
   },
   "libraries": {
+    "Microsoft.Data.Sqlite/8.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dbv4HUa1OE5zXkFd5iSV7d+HZJ0ge+4GBiJNX6MXuG0tCGqCkMgh0g7jnLHXPmLY2q7vu5gKSMSraie0fmUACg==",
+      "path": "microsoft.data.sqlite/8.0.2",
+      "hashPath": "microsoft.data.sqlite.8.0.2.nupkg.sha512"
+    },
     "Microsoft.Data.Sqlite.Core/8.0.2": {
       "type": "package",
       "serviceable": true,

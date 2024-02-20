@@ -22,16 +22,29 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        outputLBX = New ListBox()
         SuspendLayout()
+        ' 
+        ' outputLBX
+        ' 
+        outputLBX.FormattingEnabled = True
+        outputLBX.ItemHeight = 15
+        outputLBX.Location = New Point(35, 36)
+        outputLBX.Name = "outputLBX"
+        outputLBX.Size = New Size(713, 394)
+        outputLBX.TabIndex = 0
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(outputLBX)
         Name = "Form1"
         Text = "Form1"
         ResumeLayout(False)
     End Sub
+
+    Friend WithEvents outputLBX As ListBox
 
 End Class
