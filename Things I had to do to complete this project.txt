@@ -1,0 +1,35 @@
+1. Database implementation
+GOAL: Find a way to attach db into vbnet 
+
+- tried MDF format does not work, 
+ - downloaded Microsoft SQL server, 
+ - ran into version errors, 957 cannot be used, neet 907 in VBnet
+
+- tried Access DB
+ - Microsoft access db did not work, because of driver issue
+ - also client may need to download access to use the access DB
+
+- tried simple text file
+ - stores data in CSV
+ - complicated file object class to manage write and read operations
+ - SEE project fitness App
+ - future idea: could make own pseudo DB software for FUN!
+
+- tried SQLite ** success **
+ - works as a flat file, need to download additional packages into VB
+
+
+LEARNINGS: 
+ - SQLite is good for flat file DB implmentation
+ - require DB file when publishing
+ - MS products don't work so well with each other or might be lack of skill
+
+2. Requirements 
+GOAL: requirements
+
+Add a cadet
+Edit a cadet
+Assign a Dress uniform
+Assign a FTU uniform
+Search a Cadet
+Display O/S cadets who need uniforma
