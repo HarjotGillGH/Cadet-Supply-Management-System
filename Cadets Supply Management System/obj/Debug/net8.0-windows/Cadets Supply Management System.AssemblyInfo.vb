@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("Cadets Supply Management System"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ecb5e5afa6845ce7165ae233a01c0202ab6dd8b8"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9943dc39918d357ce85bbf7fc8ebb9f6552bec79"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("Cadets Supply Management System"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("Cadets Supply Management System"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _

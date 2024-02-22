@@ -16,12 +16,11 @@ Public Class Form1
         Using connection As New SqliteConnection(connectionString)
             ' Open the connection
             connection.Open()
-            Dim insertQuery As String = "INSERT INTO users (username, email) VALUES (@username, @email)"
-
+            'Dim insertQuery As String = "INSERT INTO users (username, email) VALUES (@username, @email)"
+            Dim insertQuery As String = "INSERT INTO users (username, email) VALUES ('Shaan', 'Shaan@gmail.com')"
             ' Data to insert
             Dim usernameI As String = "JohnDoe"
             Dim emailI As String = "john@example.com"
-
 
             ' Open the connection
             'connection.Open()
@@ -29,8 +28,8 @@ Public Class Form1
             ' Create a command to execute the query
             Using command As New SqliteCommand(insertQuery, connection)
                 ' Add parameters to the command
-                command.Parameters.AddWithValue("@username", usernameI)
-                command.Parameters.AddWithValue("@email", emailI)
+                'command.Parameters.AddWithValue("@username", usernameI)
+                'command.Parameters.AddWithValue("@email", emailI)
 
                 ' Execute the query
                 Dim rowsAffected As Integer = command.ExecuteNonQuery()
@@ -47,6 +46,7 @@ Public Class Form1
                 Dim queryRead As String = "SELECT * FROM users"
 
 
+                Dim dataTable As New DataTable()
 
                 ' Create a command to execute the query
                 Using command1 As New SqliteCommand(queryRead, connection)
@@ -55,7 +55,18 @@ Public Class Form1
                         ' Loop through the results and print them
                         System.Diagnostics.Debug.WriteLine("LOLOL DOES the reader workLLLLLLLLLLLLLLLLLL")
                         'System.Diagnostics.Debug.WriteLine(reader.n)
-                        System.Diagnostics.Debug.WriteLine(reader.Read())
+                        Using command2 As New SqliteCommand(queryRead, connection)
+                            Using reader1 As SqliteDataReader = command2.ExecuteReader()
+                                dataTable.Load(reader1)
+                                outputDGV.DataSource = dataTable
+                                outputDGV.Columns(0).Visible = False
+                            End Using
+                            'outputDGV.AutoSizeRowsMode
+                            outputDGV.AutoResizeColumns()
+                            outputDGV.AutoResizeRows()
+
+                        End Using
+                        'System.Diagnostics.Debug.WriteLine(reader.Read())
                         While reader.Read()
                             ' Example: Assuming the "users" ec  has columns id, username, and email
                             Dim id As Integer = reader.GetInt32(0)
@@ -66,6 +77,7 @@ Public Class Form1
                             System.Diagnostics.Debug.WriteLine("ID: " + CStr(id) + " Username: " + username + ", Email: " + email)
                             str = "ID: " + CStr(id) + " Username: " + username + ", Email: " + email + vbCrLf
                             outputLBX.Items.Add(str)
+
                         End While
 
                     End Using
@@ -73,4 +85,5 @@ Public Class Form1
             End Using
         End Using
     End Sub
+
 End Class
